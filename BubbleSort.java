@@ -14,18 +14,67 @@ public class BubbleSort
                     arr[j-1]=tmp;
                 }
             }
+           
         }
-        show(arr);
+        
+       
     }
+   
     
-    public static void show(int[]arr)
+    public static void measure(int[] array)
+	{
+		long tStart, tEnd, msecs;
+		//Modus 0 = Laufzeit von InsertionSort soll gemessen werden
+		
+		
+			//Start der Messung der Laufzeit
+			tStart = System.currentTimeMillis();
+			Bubble(array);
+			//Ende der Messung
+			tEnd = System.currentTimeMillis();
+			System.out.println("Laufzeit: " + (msecs = tEnd - tStart));
+    
+
+     }
+     
+    public static void main(String[] args)
     {
-        for(int a : arr)
+        if(args.length==1)
         {
-            System.out.print(a+" ");
+            int a = Integer.parseInt(args[0]);
+            if(a>0)
+            {
+            int[]arr=makeArray(a);
+            measure(arr);
         }
+        
+        else
+        {
+            System.out.println("Nur positive Zahlen");
+            
+        }
+        
+            
+        }
+        else
+        {
+            System.out.println("Genau eine Eingabe bitte");
+        }
+        
+        
     }
     
-
-
+    public static int[] makeArray(int a)
+    {
+        int[]arr=new int[a];
+        //füllen einen Array mit absteigend sortierten Zahlen
+        for(int j = 0; j < arr.length; j++)
+        {
+            //Werte von hinten nach vorne einfügen
+            arr[j] = a;
+            a--;
+        }
+        return arr;
+        
+    }
 }
