@@ -23,7 +23,7 @@ public class BubbleSort
     
     public static void measure(int[] array)
 	{
-		long tStart, tEnd, msecs;
+		double tStart, tEnd, msecs;
 		//Modus 0 = Laufzeit von InsertionSort soll gemessen werden
 		
 		
