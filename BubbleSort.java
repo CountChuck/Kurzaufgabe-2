@@ -94,7 +94,6 @@ public class BubbleSort
 					n = middle-1;
 				}
 			}
-			
 		}
     }
     
@@ -109,6 +108,5 @@ public class BubbleSort
             a--;
         }
         return arr;
-        
     }
 }
