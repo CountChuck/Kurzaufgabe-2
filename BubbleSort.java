@@ -32,7 +32,7 @@ public class BubbleSort
 			Bubble(array);
 			//Ende der Messung
 			tEnd = System.currentTimeMillis();
-			System.out.println("Laufzeit: " + (msecs = tEnd - tStart));
+			System.out.println("Laufzeit: " + (msecs = (tEnd - tStart)/1000));
     
 
      }
