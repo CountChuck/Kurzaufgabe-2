@@ -19,26 +19,29 @@ public class BubbleSort
 
     public static void measure(int[] array)
 	{
-		double tStart, tEnd, msecs;
+		long tStart, tEnd, lmsecs;
 		//Start der Messung der Laufzeit
 		tStart = System.currentTimeMillis();
 		Bubble(array);
 		//Ende der Messung
 		tEnd = System.currentTimeMillis();
 		//Umrechnung der Millisekunden in Sekunden und anschließende Ausgabe
-		System.out.println("Laufzeit: " + (msecs = (tEnd - tStart)/1000));
+		lmsecs = (tEnd - tStart)/1000;
+		float msecs = lmsecs;
+		System.out.println("Laufzeit: " + msecs);
     }
 	
 	public static float runtime(int[] array)
 	{
-		float tStart, tEnd, msecs;
+		long tStart, tEnd, lmsecsrt;
 		//Start der Messung der Laufzeit
 		tStart = System.currentTimeMillis();
 		Bubble(array);
 		//Ende der Messung
 		tEnd = System.currentTimeMillis();
-		msecs = (tEnd - tStart)/1000;
-		return msecs;
+		lmsecsrt = (tEnd - tStart)/1000;
+		float msecsrt = lmsecsrt;
+		return msecsrt;
 	}
      
     public static void main(String[] args)
@@ -68,17 +71,19 @@ public class BubbleSort
 			float b = Float.parseFloat(args[0]);
 			int n = 1000;
 			int[] arr2 = makeArray(n);
-			while(b < runtime(arr2))
+			while(b > runtime(arr2))
 			{
 				n = 2*n;
+				arr2 = makeArray(n);
 			}
 			int tmpN = n/2;
 			while(n >= tmpN)
 			{
 				int middle = (n+tmpN)/2;
-				if(runtime(makeArray(middle)))+0.1 <= b || runtime(makeArray(middle))-0.1 >= b)
+				float rtMid = runtime(makeArray(middle));
+				if(rtMid+0.1 <= b || rtMid-0.1 >= b)
 				{
-					System.out.println(middle);
+					System.out.println(runtime(makeArray(middle)));
 				}
 				if(middle < b)
 				{
