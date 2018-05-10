@@ -1,4 +1,26 @@
-	
+public class BubbleSort
+{	
+	public static void Bubble(int[] arr)
+	{
+		int n=arr.length;
+		for(int i=1;i<n;i++)
+    	//Feld wird von vorne durchlaufen
+		{
+			for(int j=n-1;j>=i;j--)
+			//Feld wird von hinten durchlaufen
+            {
+				if(arr[j-1]>arr[j])
+				//überprüfen ob variable vor arr[j] größer ist
+                {
+					int tmp=arr[j];
+                    arr[j]=arr[j-1];
+					//Werte werden getauscht
+                    arr[j-1]=tmp;
+                }
+            }
+        }
+    }
+
 	public static float runtime(int[] array)
 	{
 		long tStart, tEnd, lmsecsrt;
